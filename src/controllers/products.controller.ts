@@ -10,7 +10,7 @@ class ProductsController {
   };
 
   create = async (req: Request, res: Response) => {
-    const product = req.body;
+    const product = await this.productsService.validationBody(req.body);
 
     const productCreated = await this.productsService.create(product);
     res.status(201).json(productCreated);
