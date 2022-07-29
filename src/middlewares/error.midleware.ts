@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 
 const errors: Record<string, number> = {
   ValidationError: 400,
+  UnauthorizedError: 401,
 };
 
 const errorHandlerMiddleware = (
